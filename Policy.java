@@ -32,6 +32,8 @@ public class Policy {
         height = heightI;
         weight = weightI;
     }
+    
+    //long list of setters/getters
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -96,11 +98,14 @@ public class Policy {
     public void setWeight(int weight2) {
         weight = weight2;
     }
-
+    
+    
+      //method to calc BMI
     public double calculateBMI() {
         return (weight * 703) / (height * height);
     }
-
+      
+      //method to calc price
     public int calculatePrice() {
         int price = 600;
         if (age > 50) {
