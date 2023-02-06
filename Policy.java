@@ -5,8 +5,8 @@ public class Policy {
     private String lastName;
     private int age;
     private String smokingStatus;
-    private int height;
-    private int weight;
+    private double height;
+    private double weight;
 
       //no arg constructor
     public Policy() {
@@ -22,7 +22,7 @@ public class Policy {
 
       //constructor that accepts arguments
     public Policy(String policyNumberI, String providerNameI, String firstNameI, String lastNameI, int ageI,
-                  String smokingStatusI, int heightI, int weightI) {
+                  String smokingStatusI, double heightI, double weightI) {
         policyNumber = policyNumberI;
         providerName = providerNameI;
         firstName = firstNameI;
@@ -83,19 +83,19 @@ public class Policy {
         smokingStatus = smokingStatus2;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height2) {
+    public void setHeight(double height2) {
         height = height2;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight2) {
+    public void setWeight(double weight2) {
         weight = weight2;
     }
     
@@ -106,8 +106,8 @@ public class Policy {
     }
       
       //method to calc price
-    public int calculatePrice() {
-        int price = 600;
+    public double calculatePrice() {
+        double price = 600.00;
         if (age > 50) {
             price += 75;
         }
