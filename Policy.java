@@ -100,12 +100,22 @@ public class Policy {
     }
     
     
-      //method to calc BMI
+       /**
+         Constructor that calculates the BMI
+         @param The weight of the person
+         @param The height of the person
+         @return The BMI
+      */
     public double calculateBMI() {
         return (weight * 703) / (height * height);
     }
       
-      //method to calc price
+      /**
+         Constructor that calculates the price
+         @param The age of the person
+         @param Smoking status
+         @return The total price
+      */
     public double calculatePrice() {
         double price = 600.00;
         if (age > 50) {
