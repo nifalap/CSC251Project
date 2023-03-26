@@ -25,6 +25,7 @@ public class Policy {
         return numPolicies;
     }
     
+    //long list of setters/getters
     public String getSmokingStatus() {
         return policyHolder.getSmokingStatus();
     }
@@ -53,11 +54,23 @@ public class Policy {
     public void setPolicyHolder(PolicyHolder policyHolder2) {
         policyHolder = policyHolder2;
     }
-
+    
+     /**
+         Constructor that calculates the BMI
+         @param The weight of the person
+         @param The height of the person
+         @return The BMI
+      */
     public double calculateBMI() {
         return (policyHolder.getWeight() * 703) / (policyHolder.getHeight() * policyHolder.getHeight());
     }
-
+     
+    /**
+         Constructor that calculates the price
+         @param The age of the person
+         @param Smoking status
+         @return The total price
+      */
     public double calculatePrice() {
         double price = 600.00;
         if (policyHolder.getAge() > 50) {
@@ -79,7 +92,7 @@ public class Policy {
            "Provider Name: " + providerName + "\n" +
            "Policy Holder:\n" + policyHolder.toString() +
            String.format("Policy Price: $%.2f\n", calculatePrice()) + 
-           String.format("BMI: %.2f\n", calculateBMI()); 
+           String.format("BMI: %.2f\n", calculateBMI()); //unsure of if string.format was discussed in the book or not but I learned it from online. 
    }
 
 }
