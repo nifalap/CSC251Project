@@ -1,0 +1,69 @@
+<<<<<<< Updated upstream
+=======
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Project_Saad_Ahmad {
+    public static void main(String[] args) throws IOException {
+        // Read policy information from input file
+        ArrayList<Policy> policies = new ArrayList<Policy>();
+
+        // Check if the input file exists
+        File file = new File("PolicyInformation.txt");
+        if (!file.exists()) {
+            System.out.println("Unable to locate the file.");
+            System.exit(0);
+        }
+
+        // Read the policy information from the input file
+            Scanner inputFile = new Scanner(file);
+            while (inputFile.hasNext()) {
+                String policyNumber = inputFile.nextLine();
+                String providerName = inputFile.nextLine();
+                String firstName = inputFile.nextLine();
+                String lastName = inputFile.nextLine();
+                int age = inputFile.nextInt();
+                inputFile.nextLine();
+                String smokingStatus = inputFile.nextLine();
+                double height = inputFile.nextDouble();
+                double weight =inputFile.nextDouble();
+                inputFile.nextLine();
+            
+                Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
+                policy++;
+               
+                // Move to the next line
+                if(inputFile.hasNext()) {
+                inputFile.nextLine();
+                }
+            }
+            
+            inputFile.close(); //close the file
+
+
+        // Display policy information and smoker/non-smoker count
+        int smokerCount = 0;
+        int nonSmokerCount = 0;
+        for (Policy policy : policies) {
+            System.out.println("\nPolicy Number: " + policy.getPolicyNumber());
+            System.out.println("Provider Name: " + policy.getProviderName());
+            System.out.println("Policyholder's First Name: " + policy.getFirstName());
+            System.out.println("Policyholder's Last Name: " + policy.getLastName());
+            System.out.println("Policyholder's Age: " + policy.getAge());
+            System.out.println("Policyholder's Smoking Status: " + policy.getSmokingStatus());
+            System.out.println("Policyholder's Height: " + policy.getHeight() + " inches");
+            System.out.println("Policyholder's Weight: " + policy.getWeight() + " pounds");
+            System.out.printf("Policyholder's BMI: %.2f\n", policy.calculateBMI());
+            System.out.printf("Policy Price: $%.2f\n", policy.calculatePrice());
+            if (policy.getSmokingStatus().equals("smoker")) {
+                smokerCount++;
+            } else {
+                nonSmokerCount++;
+            }
+        }
+        System.out.println("\nThe number of policies with a smoker is: " + smokerCount);
+        System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
+    }
+}
+>>>>>>> Stashed changes
