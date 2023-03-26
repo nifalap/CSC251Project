@@ -1,39 +1,21 @@
 public class Policy {
     private String policyNumber;
     private String providerName;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String smokingStatus;
-    private double height;
-    private double weight;
+    private PolicyHolder policyHolder;
 
-      //no arg constructor
+    // no-arg constructor
     public Policy() {
         policyNumber = "";
         providerName = "";
-        firstName = "";
-        lastName = "";
-        age = 0;
-        smokingStatus = "non-smoker";
-        height = 0;
-        weight = 0;
+        policyHolder = new PolicyHolder();
     }
 
-      //constructor that accepts arguments
-    public Policy(String policyNumberI, String providerNameI, String firstNameI, String lastNameI, int ageI,
-                  String smokingStatusI, double heightI, double weightI) {
+    // constructor that accepts arguments
+    public Policy(String policyNumberI, String providerNameI, PolicyHolder policyHolderI) {
         policyNumber = policyNumberI;
         providerName = providerNameI;
-        firstName = firstNameI;
-        lastName = lastNameI;
-        age = ageI;
-        smokingStatus = smokingStatusI;
-        height = heightI;
-        weight = weightI;
+        policyHolder = policyHolderI;
     }
-    
-    //long list of setters/getters
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -51,83 +33,30 @@ public class Policy {
         providerName = providerName2;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public PolicyHolder getPolicyHolder() {
+        return policyHolder;
     }
 
-    public void setFirstName(String firstName2) {
-        firstName = firstName2;
+    public void setPolicyHolder(PolicyHolder policyHolder2) {
+        policyHolder = policyHolder2;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName2) {
-        lastName = lastName2;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age2) {
-        age = age2;
-    }
-
-    public String getSmokingStatus() {
-        return smokingStatus;
-    }
-
-    public void setSmokingStatus(String smokingStatus2) {
-        smokingStatus = smokingStatus2;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height2) {
-        height = height2;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight2) {
-        weight = weight2;
-    }
-    
-    
-       /**
-         Constructor that calculates the BMI
-         @param The weight of the person
-         @param The height of the person
-         @return The BMI
-      */
     public double calculateBMI() {
-        return (weight * 703) / (height * height);
+        return (policyHolder.getWeight() * 703) / (policyHolder.getHeight() * policyHolder.getHeight());
     }
-      
-      /**
-         Constructor that calculates the price
-         @param The age of the person
-         @param Smoking status
-         @return The total price
-      */
+
     public double calculatePrice() {
         double price = 600.00;
-        if (age > 50) {
+        if (policyHolder.getAge() > 50) {
             price += 75;
         }
-        if (smokingStatus.equals("smoker")) {
+        if (policyHolder.getSmokingStatus().equals("smoker")) {
             price += 100;
         }
         double bmi = calculateBMI();
         if (bmi > 35) {
-        price += (bmi - 35) * 20;
+            price += (bmi - 35) * 20;
         }
-         return price;
-   }
+        return price;
+    }
 }
