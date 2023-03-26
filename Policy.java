@@ -90,9 +90,9 @@ public class Policy {
     public String toString() {
     return "Policy Number: " + policyNumber + "\n" +
            "Provider Name: " + providerName + "\n" +
-           "Policy Holder:\n" + policyHolder.toString() +
-           String.format("Policy Price: $%.2f\n", calculatePrice()) + 
-           String.format("BMI: %.2f\n", calculateBMI()); //unsure of if string.format was discussed in the book or not but I learned it from online. 
+           policyHolder.toString() +
+           String.format("Policyholder's BMI: %.2f\n", calculateBMI()) + //unsure of if string.format was discussed in the book or not but I learned it from online. 
+           String.format("Policy Price: $%.2f\n", calculatePrice()); 
    }
 
 }
