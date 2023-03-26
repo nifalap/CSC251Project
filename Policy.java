@@ -58,5 +58,14 @@ public class Policy {
             price += (bmi - 35) * 20;
         }
         return price;
+        
     }
+    
+    public String toString() {
+      return "Policy Number: " + policyNumber + "\n" +
+            "Provider Name: " + providerName + "\n" +
+            "Policy Holder:\n" + policyHolder.toString() + "\n" +
+            String.format("Policy Price: $%.2f, BMI: %.2f", calculatePrice(), calculateBMI()); //unsure on if we're allowed to use string.format, I don't recall for sure if it was mentioned in the book but I learned it online.
+}
+
 }

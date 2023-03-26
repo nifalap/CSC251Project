@@ -72,4 +72,13 @@ public class PolicyHolder {
     public void setWeight(double weight2) {
         weight = weight2;
     }
+    
+    public String toString() {
+    return "First Name: " + firstName + "\n" +
+            "Last Name: " + lastName + "\n" +
+            "Age: " + age + "\n" +
+            "Smoking Status: " + smokingStatus + "\n" +
+            String.format("Height: %.2f inches\n", height) +
+            String.format("Weight: %.2f pounds\n", weight);
+    }
 }
