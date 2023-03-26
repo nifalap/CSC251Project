@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -66,4 +65,4 @@ public class Project_Saad_Ahmad {
         System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
     }
 }
->>>>>>> Stashed changes
+
