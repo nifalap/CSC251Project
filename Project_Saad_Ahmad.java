@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -30,7 +29,7 @@ public class Project_Saad_Ahmad {
                 inputFile.nextLine();
             
                 Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
-                policy++;
+                policies.add(policy);
                
                 // Move to the next line
                 if(inputFile.hasNext()) {
@@ -65,4 +64,3 @@ public class Project_Saad_Ahmad {
         System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
     }
 }
-
