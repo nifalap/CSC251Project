@@ -1,4 +1,5 @@
 public class Policy {
+    private static int numPolicies = 0;  //static variable to keep track of policies
     private String policyNumber;
     private String providerName;
     private PolicyHolder policyHolder;
@@ -16,7 +17,12 @@ public class Policy {
         providerName = providerNameI;
         policyHolder = policyHolderI;
     }
-
+    
+    //getter for static variable numPolicies
+    public static int getNumPolicies() {
+        return numPolicies;
+    }
+    
     public String getPolicyNumber() {
         return policyNumber;
     }
