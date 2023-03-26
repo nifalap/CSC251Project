@@ -89,7 +89,7 @@ public class PolicyHolder {
                 "Last Name: " + lastName + "\n" +
                 "Age: " + age + "\n" +
                 "Smoking Status: " + smokingStatus + "\n" +
-                String.format("Height: %.2f inches\n", height) +
-                String.format("Weight: %.2f pounds\n", weight); //unsure of if string.format was discussed in the book or not but I learned it from online. 
+                String.format("Height: %.1f inches\n", height) +
+                String.format("Weight: %.1f pounds\n", weight); //unsure of if string.format was discussed in the book or not but I learned it from online. 
     }
 }
